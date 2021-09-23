@@ -39,7 +39,7 @@ For setting up the test environment, we run the "test_env.sh" script as below:
     sudo ./test_env.sh
     sudo ip netns exec agent1 route add default dev port1
     sudo ip netns exec agent2 route add default dev port2
-    ```
+```
 
 
 For IPV6
@@ -51,7 +51,6 @@ For IPV6
 
 sudo ip netns exec agent1 python3 mainIPV6.py fd01:2345:6789:abc1::5
 sudo ip netns exec agent2 python3 mainIPV6.py fd01:2345:6789:abc1::6
-
 ```
 
 
