@@ -4,9 +4,10 @@ In this assignment, we are supposed to perform metrics measurements between two 
 
 # Description:
 We assume that there are two agents, agent1 connects to OVS1 and agent2 connects to OVS2. The multicast address and port are as following:
+```
 BROADCAST_PORT = 1910
 BROADCAST_ADDR = "239.255.255.250"
-
+```
 Agents check the multicast traffic in order to discover each other. Both agents can be considered as the client and the server sending/receiving packets to/from the multicast domain to measure some metrics (e.g. the rate of packet loss and latency) about the VXLAN.
 
 
@@ -33,14 +34,16 @@ In order to run the program, we run the below commands in two different terminal
 In order to check the correctness of the code, we create an artificial delay on the OVS interfaces in the namespace by using tc command. 
 In this case, we remove the connectivity between ovs1 and ovs2. Both OVSs connect to each other by adding another agent(agent3). Finally, we add a fixed amount of delay to all packets going out of the local Ethernet on both ports of agent3.
 For setting up the test environment, we run the "test_env.sh" script as below:
+```
     sudo ./clean.sh
     sudo ./test_env.sh
     sudo ip netns exec agent1 route add default dev port1
     sudo ip netns exec agent2 route add default dev port2
-
+    ```
 
 
 For IPV6
+```
     sudo ./clean.sh
     sudo ./env_ipv6.sh
     sudo ip -6 netns exec agent1 route add default dev port1
@@ -49,7 +52,7 @@ For IPV6
 sudo ip netns exec agent1 python3 mainIPV6.py fd01:2345:6789:abc1::5
 sudo ip netns exec agent2 python3 mainIPV6.py fd01:2345:6789:abc1::6
 
-
+```
 
 
 
