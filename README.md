@@ -1,11 +1,5 @@
 # Asynchronous-Programming-in-Python
-In this assignment, we are supposed to perform metrics measurements between two Open vSwitches connecting to each other by using some agents. Agents are connected to OVS using Internal ports. 
-At Aalto University I also was involved in one project to perform metrics measurements in an overlay 
-network. The main objective of this project was to perform metrics measurements between two Open 
-vSwitches connecting to each other by using some agents. Agents are connected to OVS using Internal 
-ports and are responsible to send/receive packets and do some measurements about the rate of packet 
-loss and latency in the VXLAN. In this project I got familiar with Asynchronous programming in Python for 
-creating asyncio Agents for the test environment.
+The main objective of this project was to perform metrics measurements between two Open vSwitches (an overlay network) connecting to each other by using some agents. Agents are connected to OVS using Internal ports and are responsible to send/receive packets and do some measurements about the rate of packet loss and latency in the VXLAN. This project is about Asynchronous programming in Python for creating asyncio Agents and working with them in our test environment.
 
 # Description:
 We assume that there are two agents, agent1 connects to OVS1 and agent2 connects to OVS2. The multicast address and port are as following:
