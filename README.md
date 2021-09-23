@@ -1,6 +1,11 @@
 # Asynchronous-Programming-in-Python
 In this assignment, we are supposed to perform metrics measurements between two Open vSwitches connecting to each other by using some agents. Agents are connected to OVS using Internal ports. 
-
+At Aalto University I also was involved in one project to perform metrics measurements in an overlay 
+network. The main objective of this project was to perform metrics measurements between two Open 
+vSwitches connecting to each other by using some agents. Agents are connected to OVS using Internal 
+ports and are responsible to send/receive packets and do some measurements about the rate of packet 
+loss and latency in the VXLAN. In this project I got familiar with Asynchronous programming in Python for 
+creating asyncio Agents for the test environment.
 
 # Description:
 We assume that there are two agents, agent1 connects to OVS1 and agent2 connects to OVS2. The multicast address and port are as following:
@@ -21,13 +26,16 @@ In this program, we mostly use "call_later" method in event loop in order to arr
 
 # How to run the program
 For setting up the test environment, pleaser run the "env_ipv4.sh" script as below:
+```
     sudo ./env_ipv4.sh
     sudo ip netns exec agent1 route add default dev port1
     sudo ip netns exec agent2 route add default dev port2
- 
+```
 In order to run the program, we run the below commands in two different terminals:
+```
     sudo ip netns exec agent1 python3 main.py 10.1.1.5
     sudo ip netns exec agent2 python3 main.py 10.1.1.6
+```
 
 
 
@@ -44,13 +52,13 @@ For setting up the test environment, we run the "test_env.sh" script as below:
 
 For IPV6
 ```
-sudo ./clean.sh
-sudo ./env_ipv6.sh
-sudo ip -6 netns exec agent1 route add default dev port1
-sudo ip -6 netns exec agent2 route add default dev port2
+    sudo ./clean.sh
+    sudo ./env_ipv6.sh
+    sudo ip -6 netns exec agent1 route add default dev port1
+    sudo ip -6 netns exec agent2 route add default dev port2
 
-sudo ip netns exec agent1 python3 mainIPV6.py fd01:2345:6789:abc1::5
-sudo ip netns exec agent2 python3 mainIPV6.py fd01:2345:6789:abc1::6
+    sudo ip netns exec agent1 python3 mainIPV6.py fd01:2345:6789:abc1::5
+    sudo ip netns exec agent2 python3 mainIPV6.py fd01:2345:6789:abc1::6
 ```
 
 
